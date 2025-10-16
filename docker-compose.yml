@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - PROVIDER_API_URL=${PROVIDER_API_URL}
+      - PROVIDER_API_KEY=${PROVIDER_API_KEY}
+      - BASE_URL=${BASE_URL}
+    volumes:
+      - ./db.json:/app/db.json
+    restart: unless-stopped
