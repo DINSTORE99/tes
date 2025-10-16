@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Store SSH / VMess - Otomatis + Topup</title>
+  <style>
+    body { font-family: Inter, system-ui, sans-serif; padding: 18px; background:#071026; color:#e6eef8 }
+    .card{ background:#07112a; padding:16px; border-radius:12px; max-width:900px; margin:12px auto }
+    .plans { display:flex; gap:12px; flex-wrap:wrap }
+    .plan{ flex:1 1 180px; border-radius:8px; padding:12px; background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); }
+    button{ padding:8px 12px; border-radius:8px; border:none; cursor:pointer }
+    input, select{ padding:8px; border-radius:8px; border:1px solid rgba(255,255,255,0.06); background:transparent; color:inherit }
+    pre{ background:#031026; padding:12px; border-radius:8px; overflow:auto }
+    .row{ display:flex; gap:8px; align-items:center }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Store SSH / VMess (Demo)</h1>
+    <p>Pilih paket, topup saldo, lalu beli menggunakan saldo.</p>
+
+    <div style="margin-bottom:12px">
+      <label>Email</label><br>
+      <input id="email" placeholder="email@contoh.com" />
+      <button id="loadUser">Muat Akun</button>
+      <span id="userInfo"></span>
+    </div>
+
+    <h3>Paket</h3>
+    <div id="plans" class="plans"></div>
+
+    <hr />
+
+    <div>
+      <h3>Topup Saldo</h3>
+      <div class="row">
+        <input id="topupAmount" placeholder="Jumlah (contoh: 10000)" />
+        <button id="createTopup">Buat Invoice Topup</button>
+      </div>
+      <div id="topupResult"></div>
+    </div>
+
+    <hr />
+
+    <div>
+      <h3>Beli Paket (pakai saldo)</h3>
+      <select id="selectedPlan"></select>
+      <button id="buyBtn">Beli dengan Saldo</button>
+    </div>
+
+    <h3>Log</h3>
+    <pre id="log">-- ready --</pre>
+  </div>
+
+  <script src="/js/app.js"></script>
+</body>
+</html>
